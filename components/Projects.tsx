@@ -136,6 +136,12 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
 
+        {project.company && (
+          <p className="text-gray-500 text-xs mb-2 font-medium">
+            {project.company}
+          </p>
+        )}
+
         <p className="text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3">
           {project.description}
         </p>
