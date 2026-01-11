@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiCode, FiEdit, FiMove, FiPackage, FiSettings } from "react-icons/fi";
 import {
   SiCloudflare,
   SiCss3,
@@ -23,6 +22,13 @@ import {
   SiTypescript,
   SiUbuntu,
 } from "react-icons/si";
+import {
+  CursorIcon,
+  FramerMotionIcon,
+  N8nIcon,
+  VSCodeIcon,
+  ZustandIcon,
+} from "./icons/DevIcon";
 
 interface Skill {
   name: string;
@@ -38,14 +44,14 @@ const skills: Skill[] = [
   { name: "React Native", icon: SiReact },
   { name: "Next.js", icon: SiNextdotjs },
   { name: "TailwindCSS", icon: SiTailwindcss },
-  { name: "Zustand", icon: FiPackage },
-  { name: "Framer Motion", icon: FiMove },
+  { name: "Zustand", icon: ZustandIcon },
+  { name: "Framer Motion", icon: FramerMotionIcon },
   { name: "Figma", icon: SiFigma },
   { name: "Node.js", icon: SiNodedotjs },
   { name: "Express.js", icon: SiExpress },
   { name: "MongoDB", icon: SiMongodb },
-  { name: "VS Code", icon: FiCode },
-  { name: "Cursor", icon: FiEdit },
+  { name: "VS Code", icon: VSCodeIcon },
+  { name: "Cursor", icon: CursorIcon },
   { name: "Git", icon: SiGit },
   { name: "GitHub", icon: SiGithub },
   { name: "Docker", icon: SiDocker },
@@ -54,7 +60,7 @@ const skills: Skill[] = [
   { name: "Linux", icon: SiLinux },
   { name: "Ubuntu", icon: SiUbuntu },
   { name: "Nginx", icon: SiNginx },
-  { name: "n8n", icon: FiSettings },
+  { name: "n8n", icon: N8nIcon },
 ];
 
 const containerVariants = {
@@ -105,21 +111,21 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 lg:gap-8"
+          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8"
         >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.15, y: -5 }}
-              className="flex flex-col items-center justify-center p-6 glass rounded-xl group cursor-pointer relative overflow-hidden"
+              className="flex flex-col items-center justify-center p-4 sm:p-6 glass rounded-xl group cursor-pointer relative overflow-hidden"
             >
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              <div className="relative z-10 flex flex-col items-center gap-3">
-                <skill.icon className="w-10 h-10 md:w-12 md:h-12 text-gray-300 group-hover:text-purple-400 transition-colors" />
-                <span className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-200 transition-colors text-center font-medium">
+              <div className="relative z-10 flex flex-col items-center gap-2 sm:gap-3">
+                <skill.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-gray-300 group-hover:text-purple-400 transition-colors" />
+                <span className="text-[10px] sm:text-xs md:text-sm text-gray-400 group-hover:text-gray-200 transition-colors text-center font-medium">
                   {skill.name}
                 </span>
               </div>
