@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiCode, FiServer, FiCpu } from "react-icons/fi";
+import { FiCode, FiCpu, FiServer } from "react-icons/fi";
 
 const aboutCards = [
   {
@@ -41,7 +41,6 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
     },
   },
 };
@@ -75,13 +74,13 @@ export default function About() {
           className="max-w-3xl mx-auto mb-16"
         >
           <p className="text-lg sm:text-xl text-gray-300 leading-relaxed text-center">
-            I'm a forward-thinking developer and systems architect specializing
-            in full-stack development, DevOps automation, and AI-driven
-            solutions. With a passion for creating elegant, scalable systems, I
-            bridge the gap between complex infrastructure and intuitive user
-            experiences. My work focuses on building robust applications that
-            leverage cutting-edge technology while maintaining clean,
-            maintainable code.
+            I&apos;m a forward-thinking developer and systems architect
+            specializing in full-stack development, DevOps automation, and
+            AI-driven solutions. With a passion for creating elegant, scalable
+            systems, I bridge the gap between complex infrastructure and
+            intuitive user experiences. My work focuses on building robust
+            applications that leverage cutting-edge technology while maintaining
+            clean, maintainable code.
           </p>
         </motion.div>
 
@@ -102,14 +101,14 @@ export default function About() {
             >
               {/* Gradient overlay on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                className={`absolute inset-0 bg-linear-to-br ${card.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
               />
 
               <div className="relative z-10">
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  className={`inline-flex p-4 rounded-lg bg-gradient-to-br ${card.gradient} mb-4`}
+                  className={`inline-flex p-4 rounded-lg bg-linear-to-br ${card.gradient} mb-4`}
                 >
                   <card.icon className="w-8 h-8 text-white" />
                 </motion.div>
