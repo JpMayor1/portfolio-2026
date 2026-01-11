@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { projects, type ProjectCategory } from "@/data/projects";
 import type { Project } from "@/data/projects";
+import { projects, type ProjectCategory } from "@/data/projects";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const categories: ProjectCategory[] = ["Freelance", "Work", "Personal"];
 
@@ -26,7 +26,6 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
     },
   },
   exit: {
@@ -39,7 +38,9 @@ const cardVariants = {
 };
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory | "All">("All");
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory | "All">(
+    "All"
+  );
   const filteredProjects =
     activeCategory === "All"
       ? projects
@@ -78,7 +79,7 @@ export default function Projects() {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-500/50"
+                  ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-500/50"
                   : "glass text-gray-300 hover:text-purple-400 hover:border-purple-400/50"
               }`}
               whileHover={{ scale: 1.05 }}
@@ -117,11 +118,11 @@ function ProjectCard({ project }: { project: Project }) {
       className="glass rounded-xl overflow-hidden group cursor-pointer relative"
     >
       {/* Project Image Placeholder */}
-      <div className="relative h-48 bg-gradient-to-br from-blue-600/20 to-purple-600/20 overflow-hidden">
+      <div className="relative h-48 bg-linear-to-br from-blue-600/20 to-purple-600/20 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-gray-500 text-sm">Project Image</div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       {/* Project Info */}

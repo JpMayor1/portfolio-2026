@@ -1,28 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FiCode, FiEdit, FiMove, FiPackage, FiSettings } from "react-icons/fi";
 import {
-  SiHtml5,
+  SiCloudflare,
   SiCss3,
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiNodedotjs,
+  SiDocker,
   SiExpress,
-  SiMongodb,
+  SiFigma,
   SiGit,
   SiGithub,
-  SiDocker,
-  SiTrello,
-  SiCloudflare,
+  SiHtml5,
+  SiJavascript,
   SiLinux,
-  SiUbuntu,
+  SiMongodb,
+  SiNextdotjs,
   SiNginx,
-  SiFigma,
+  SiNodedotjs,
+  SiReact,
+  SiTailwindcss,
+  SiTrello,
+  SiTypescript,
+  SiUbuntu,
 } from "react-icons/si";
-import { FiPackage, FiMove, FiCode, FiEdit, FiSettings } from "react-icons/fi";
 
 interface Skill {
   name: string;
@@ -75,7 +75,6 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.4,
-      ease: "easeOut",
     },
   },
 };
@@ -116,7 +115,7 @@ export default function Skills() {
               className="flex flex-col items-center justify-center p-6 glass rounded-xl group cursor-pointer relative overflow-hidden"
             >
               {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative z-10 flex flex-col items-center gap-3">
                 <skill.icon className="w-10 h-10 md:w-12 md:h-12 text-gray-300 group-hover:text-purple-400 transition-colors" />

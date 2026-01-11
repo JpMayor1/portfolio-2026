@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { FormEvent, useState } from "react";
 import {
-  FiMail,
-  FiPhone,
-  FiMapPin,
+  FiCheck,
   FiGithub,
   FiLinkedin,
+  FiMail,
+  FiMapPin,
+  FiPhone,
   FiSend,
-  FiCheck,
   FiX,
 } from "react-icons/fi";
 
@@ -146,8 +146,8 @@ export default function Contact() {
                 Contact Information
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Feel free to reach out if you'd like to collaborate or just say
-                hello!
+                Feel free to reach out if you&apos;d like to collaborate or just
+                say hello!
               </p>
             </div>
 
@@ -164,7 +164,7 @@ export default function Contact() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="glass rounded-lg p-4 flex items-start gap-4 group hover:border-purple-400/50 transition-colors"
                   >
-                    <div className="p-2 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600">
+                    <div className="p-2 rounded-lg bg-linear-to-br from-blue-600 to-purple-600">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -308,7 +308,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={formStatus.type === "loading"}
-                className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-4 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: formStatus.type === "loading" ? 1 : 1.02 }}
                 whileTap={{ scale: formStatus.type === "loading" ? 1 : 0.98 }}
               >
