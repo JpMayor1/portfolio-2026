@@ -56,7 +56,7 @@ export default function Hero() {
           >
             <motion.button
               onClick={handleResumeClick}
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white overflow-hidden cursor-pointer"
+              className="group relative px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white overflow-hidden cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
@@ -66,7 +66,7 @@ export default function Hero() {
                 View Resume
               </span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600"
+                className="absolute inset-0 bg-linear-to-r from-purple-600 to-blue-600"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
