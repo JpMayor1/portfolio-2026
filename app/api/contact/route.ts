@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // Resend API configuration
-// Replace with your actual Resend API key in environment variables
-const RESEND_API_KEY = process.env.RESEND_API_KEY || "YOUR_RESEND_API_KEY";
-const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-const RESEND_TO_EMAIL = process.env.RESEND_TO_EMAIL || "contact@jamesphillipmayor.com";
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_TO_EMAIL =
+  process.env.RESEND_TO_EMAIL || "jamesphillipmayor1@gmail.com";
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,9 +27,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate API key exists
+    if (!RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: "Email service is not configured" },
+        { status: 500 }
+      );
+    }
+
     // Send email using Resend
-    // Note: You need to install and configure Resend SDK
-    // npm install resend
+    // Note: The "from" field uses the user's email, but Resend may require domain verification
+    // If emails fail, you may need to use a verified domain email for "from" and keep user email in "reply_to"
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -38,7 +45,7 @@ export async function POST(request: NextRequest) {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: RESEND_FROM_EMAIL,
+        from: "Portfolio <onboarding@resend.dev>",
         to: [RESEND_TO_EMAIL],
         reply_to: email,
         subject: `Portfolio Contact Form: ${name}`,

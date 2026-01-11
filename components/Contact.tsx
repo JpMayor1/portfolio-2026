@@ -83,19 +83,19 @@ export default function Contact() {
     {
       icon: FiPhone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+630055755988",
+      href: "tel:+630055755988",
     },
     {
       icon: FiMail,
       label: "Email",
-      value: "contact@jamesphillipmayor.com",
-      href: "mailto:contact@jamesphillipmayor.com",
+      value: "jamesphillipmayor1@gmail.com",
+      href: "mailto:jamesphillipmayor1@gmail.com",
     },
     {
       icon: FiMapPin,
       label: "Location",
-      value: "Your City, Country",
+      value: "Imus, Cavite",
       href: null,
     },
   ];
@@ -104,12 +104,12 @@ export default function Contact() {
     {
       icon: FiGithub,
       label: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/JpMayor1",
     },
     {
       icon: FiLinkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/in/james-phillip-mayor",
     },
   ];
 
